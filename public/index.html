@@ -11,9 +11,7 @@
     <input type="text" placeholder="Enter Message" id="message">
     <button id="sendBtn">Send</button>
 
-    <div id="messages">
-
-    </div>
+    <div id="messages"></div>
 
     <script src="/socket.io/socket.io.js" ></script> <!-- Given by the Server intialized in backend -->
     <script>
@@ -24,6 +22,9 @@
 
         socket.on('message', message =>{
             console.log(message)
+            const p = document.createElement("p");
+            p.innerText = message;
+            allMessages.appendChild(p);
         })
 
         sendBtn.addEventListener('click', e =>{
