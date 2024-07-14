@@ -37,7 +37,7 @@ https to WS
 
 Full Duplex: Bi directional
 
-
+- Clients are called SOCKETS
 
 
 
