@@ -19,7 +19,8 @@
 
         sendBtn.addEventListener('click', e =>{
             const message = messageInput.value;
-            console.log(message);
+            //console.log(message);
+            socket.emit('user-message', message); /* Can be viewed in Network, WS, Messages */
         })
     </script>
 </body>

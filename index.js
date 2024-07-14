@@ -11,7 +11,10 @@ app.use(express.static(path.resolve("./public")))
 
 // Socket 
 io.on('connection', (socket) => {
-    console.log("New user has connected", socket.id);
+    //console.log("New user has connected", socket.id);
+    socket.on('user-message', message => {
+        console.log("A new User Message ", message);
+    })
 })
 
 
