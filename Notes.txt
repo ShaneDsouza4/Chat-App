@@ -1,0 +1,53 @@
+- Normally (Single Direction)
+1. Client.
+2. Server running Node JS.
+
+In the communication process; 
+- Client sends REQUEST to server. 
+- Server send RESPONSE to us.
+Connection Closes.
+
+> Problem: Chat based app means Real time app. 
+
+- Polling: 
+- UserA sends server a message. We want the message to go to UserB.
+- UserB will have to keep hitting the server, to see if there is any message for them.
+- Clients will have to keep requesting the server, after every second.
+- Polling is overkill. 1000 clients polling each second, will increase load on the server. Sending Request and not getting anything.
+
+- WebSockets: (Bi Direction Communication Protocol)
+Client sends HTTP Request to Server. The HTTP Request says to make it a WebSocket connection. Will be upgraded in the Headers.
+Server makes the WebSocket connection and sends response to the Client. Connection won't be closed.
+Server can now send as many requests.
+Client can also now send many requests.
+When leaving chat, you can close the connection.
+
+Making a Chat app
+Server
+C1
+C2
+
+Both made webSocket connection with the server. 
+The server can now send packet to who ever it is supposed to go to.
+
+Can be used to upgrade from;
+http1 to http2
+http to https
+https to WS
+
+Full Duplex: Bi directional
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
